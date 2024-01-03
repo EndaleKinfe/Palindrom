@@ -7,7 +7,6 @@ body {
   background-color: #575757;
   color: #e88a8a;
   width: 100vw;
-  overflow: hidden;
   font-family: Montserrat, sans-serif;
 }
 
@@ -17,7 +16,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 20%;
+  margin: 0 auto;
 }
 .container h1 {
   font-family: Sevillana, sans-serif;
