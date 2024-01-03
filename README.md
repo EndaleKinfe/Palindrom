@@ -1,3 +1,4 @@
 this is endale's palindrome Build
 
-[Live site]{"https//:www.google.com"}
+-Solution Url:[Live site]("https://endalekinfe.github.io/Palindrom/")
+-Github repo:[Source file]("https://github.com/EndaleKinfe/Palindrom")
