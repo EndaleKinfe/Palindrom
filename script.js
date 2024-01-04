@@ -1,11 +1,17 @@
-const textInput = document.getElementById('text-input');
-const checkBtn = document.getElementById('check-btn');
+const textInput = document.querySelector('#text-input');
+const checkBtn = document.querySelector('#check-btn');
 const result = document.getElementById('result');
+const form = document.querySelector("#form");
 
 function formatInputText(text){
-    const regex = /[.,-_:/s/]/g;
+    const regex = /[\s-.,_:()\\/]/g;
     let corrected = text.replace(regex, "");
     return corrected.toLowerCase();
+}
+
+function stopreload(e){
+e.preventDefault();
+checkTextForPalindrome();
 }
 
 function reverseText(text){
@@ -17,7 +23,10 @@ function reverseText(text){
 function checkTextForPalindrome(){
     const userInput = textInput.value;
     const formattedtext = formatInputText(userInput);
-    if(formattedtext === reverseText(formattedtext)){
+    if(userInput === ""){
+        alert("Please input a value");
+    }
+    else if(formattedtext === reverseText(formattedtext)){
         let response = `${userInput} is a palindrome`;
         displayResult(response);
     }
@@ -25,7 +34,6 @@ function checkTextForPalindrome(){
         let response =`${userInput} is not a palindrome`;
         displayResult(response);
     } 
-    
 }
 
 function displayResult(response){
@@ -33,6 +41,4 @@ function displayResult(response){
     result.innerText = "" + response;
 }
 
-checkBtn.addEventListener("submit", event =>{
-    checkTextForPalindrome();
- event.preventDefault();});
+form.addEventListener("submit", stopreload);
